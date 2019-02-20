@@ -16,8 +16,7 @@ export const BlogPostTemplate = ({
   helmet
 }) => {
   const PostContent = contentComponent || Content;
-  console.log({ helmet });
-  console.log({ image });
+  const Image = image.childImageSharp ? image.childImageSharp.fluid.src : image;
 
   return (
     <section className="section">
@@ -25,10 +24,10 @@ export const BlogPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
+            <img src={Image} alt={title} />
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>これはテストです。</p>
             <p>{description}</p>
             <PostContent content={content} />
             {tags && tags.length ? (

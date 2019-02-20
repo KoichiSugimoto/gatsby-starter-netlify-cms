@@ -7,6 +7,7 @@ tags:
   - flavor
   - tasting
 thumbnail: /img/og-image.jpg
+test: Test
 ---
 
 ![flavor wheel](/img/flavor_wheel.jpg)

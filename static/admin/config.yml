@@ -25,7 +25,7 @@ collections:
         required: false
         media_library:
           config:
-            multiple: true
+            multiple: false
 
   - name: "pages"
     label: "Pages"
