@@ -8,7 +8,7 @@ description: >-
 tags:
   - flavor
   - tasting
-images: 'https://ucarecdn.com/926acaff-4340-444f-8a13-b1cd3aeb25e6/'
+test: test
 ---
 
 ![flavor wheel](/img/flavor_wheel.jpg)
