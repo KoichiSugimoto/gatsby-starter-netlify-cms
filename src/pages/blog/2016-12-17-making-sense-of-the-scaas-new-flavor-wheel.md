@@ -8,6 +8,7 @@ description: >-
 tags:
   - flavor
   - tasting
+thumbnail: /img/apple-touch-icon.png
 test: test
 ---
 
