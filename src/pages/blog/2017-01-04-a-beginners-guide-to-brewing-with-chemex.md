@@ -9,11 +9,7 @@ description: >-
 tags:
   - brewing
   - chemex
-<<<<<<< HEAD
-test: Test
-=======
 thumbnail: /img/blog-index.jpg
->>>>>>> 19d499f2dd1dacbe5f91cdcc514eaa00622bada0
 ---
 ![chemex](/img/chemex.jpg)
 
