@@ -1,0 +1,30 @@
+@charset "utf-8";
+// base color valiables ------------------------------
+$color_default: #121723;
+$color_black: #000;
+$color_white: #FFF;
+$color_gray: #EFEFEF;
+$color_light_blue: #7A9EB1;
+$color_dark_blue: #658398;
+$color_border: #293141;
+$color_point: #ffd200;
+$color_dark_gray: #bfbfbf;
+$color_gray_2: #D0D0D0;
+
+
+
+/* Font family */
+$font_family_base: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+$font_family_mincho: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", "serif";;
+$font_family_en: arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
+
+$font-family-body: "Gothic Medium BBB","中ゴシックBBB", sans-serif;
+$font-family-header: "Midashi Go MB31",'見出ミンMA31', sans-serif;
+$font-family-AG-b: "Roboto", sans-serif;
+$font-family-AG-m: "Roboto", sans-serif;
+
+/* Font size */
+$fs_default: 1em;
+
+/* Width */
+$width_default: 980px;

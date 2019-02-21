@@ -1,0 +1,153 @@
+@charset "utf-8";
+@import '../mixins/_mixins.scss';
+@import '_valiables.scss';
+
+/* ----------------------------------------
+ 	reset
+ ---------------------------------------- */
+
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+strong,
+sub,
+sup,
+i,
+small,
+address,
+time,
+fieldset,
+form,
+label,
+legend,
+hr,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+header,
+footer,
+nav,
+section,
+article,
+aside,
+figure,
+figcaption,
+canvas,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: baseline;
+    border: 0;
+}
+
+article,
+aside,
+figure,
+figcaption,
+footer,
+header,
+nav,
+section {
+    display: block;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul {
+    padding: 0;
+}
+
+input,
+button,
+textarea {
+    outline: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+input,
+textarea,
+button {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+input[type='submit'],
+input[type='button'],
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+a {
+    color: $color_default;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    position: relative;
+    color: $color_default;
+    font-family: $font-family-base;
+    line-height: 20px;
+    background-color: transparent;
+    -webkit-text-size-adjust: 100%;
+}
