@@ -8,8 +8,12 @@
     "css-loader": "^2.1.0",
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
+    "prettier-stylelint": "^0.4.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-primer": "^5.0.0",
+    "stylelint-config-recess-order": "^2.0.1",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3"
   }

@@ -8,93 +8,121 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <header>
-    <div class="l-wrapper">
-      <div class="l-header">
-        <p class="c-logo">
-          <img src="#" alt="サイトタイトル" title="サイトタイトル">
-        </p>
-        <div class="c-menu">
-          <span></span>
-          <span></span>
-          <span></span>
+  <div class="l-wrapper">
+    <header>
+        <div class="l-header">
+          <a href="index.html">
+            <p class="c-logo">
+              <div class="c-logo-img">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 836.97 282.98">
+                  <defs><style>.cls-1{isolation:isolate;}</style></defs>
+                  <title>chifra</title>
+                  <desc>このサイトのタイトル</desc>
+                  <g id="layer_2" data-name="layer_2">
+                    <g id="layer"><path class="cls-1" d="M168.6,243.6a92.77,92.77,0,1,1-.24-107.14l-39.2,26.64a45.38,45.38,0,1,0,.6,53.4Z"/><polygon class="cls-1" points="229.3 282.98 229.3 111.42 278.11 94.15 278.11 282.98 229.3 282.98"/><path class="cls-1" d="M356.66,283h48.8V148.21s-.14-1.93,1.69-1.93h50.68V101.79H407.25a2,2,0,0,1-1.36-1.4s-.85-9.44,2.53-18,11.12-19.29,18.16-24.22S443.9,49,447,48.58s10.84,0,10.84,0V1.14S458.12-.13,455.3,0s-19.15,1.41-32,6.2S392.93,22,383.5,32.67,365.91,56.89,362.67,66.6s-6,28-6,36.18Z"/><path class="cls-1" d="M509.17,283H557.6s-.19-78.45,0-84.66c.19-10.13,5.82-25.53,13.8-33.6,10.12-10.24,21.63-16.33,28.23-18.16a73.88,73.88,0,0,1,14.43-2.09,1,1,0,0,0,1-1v-46s.42-1.41-1.41-1.41a104.9,104.9,0,0,0-51.5,14.36c-18.23,11-32.4,25.53-39.44,38.76s-13.52,31.35-13.52,47.68Z"/><path class="cls-1" d="M837,204.16a92.64,92.64,0,1,1,0-27.91m-90.57-30.6A44.69,44.69,0,1,0,791,190.34,44.74,44.74,0,0,0,746.36,145.65Zm42.56,31V98.4a1.56,1.56,0,0,1,1.56-1.57H837V281.2H790.48a1.56,1.56,0,0,1-1.56-1.57V204A66.23,66.23,0,0,0,791,189,38.09,38.09,0,0,0,788.92,176.7Z"/></g>
+                  </g>
+                </svg>
+              </div>
+            </p>
+          </a>
+          <div class="c-menu is-closed">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-      </div>
-    </div>
-  </header>
-  <main>
-    <div class="l-container">
-      <div class="l-archive">
-        <h1 class="p-archive-title">アーカイブタイトル</h1>
-        <article>
-          <div class="p-archive">
-            <div class="p-archive-thumb">
-              <img src="#" alt="エントリータイトル" title="エントリータイトル">
-            </div>
-            <div class="p-archive-entry">
-              <header>
-                <h3 class="p-archive-entry-title">エントリータイトル</h3>
-                <div class="p-archive-entry-meta">
-                  <div class="p-archive-entry-meta-date">YYYY/MM/DD</div>
-                  <div class="p-archive-entry-meta-tags">
-                    <ul class="p-archive-entry-meta-tags-list c-tags">
-                      <li><a href="archive.html">タグ1</a></li>
-                      <li><a href="archive.html">タグ2</a></li>
-                      <li><a href="archive.html">タグ3</a></li>
-                      <li><a href="archive.html">タグ4</a></li>
-                    </ul>
+      </header>
+    <main>
+      <div class="l-container">
+        <div class="l-archive">
+          <h1 class="p-archive-title">アーカイブタイトル</h1>
+          <article>
+            <div class="p-archive">
+              <div class="p-archive-thumb">
+                <img src="#" alt="エントリータイトル" title="エントリータイトル">
+              </div>
+              <div class="p-archive-entry">
+                <header>
+                  <h3 class="p-archive-entry-title">エントリータイトル</h3>
+                  <div class="p-archive-entry-meta">
+                    <div class="p-archive-entry-meta-date">YYYY/MM/DD</div>
+                    <div class="p-archive-entry-meta-tags">
+                      <ul class="p-archive-entry-meta-tags-list c-tags">
+                        <li><a href="archive.html">タグ1</a></li>
+                        <li><a href="archive.html">タグ2</a></li>
+                        <li><a href="archive.html">タグ3</a></li>
+                        <li><a href="archive.html">タグ4</a></li>
+                      </ul>
+                    </div>
                   </div>
+                </header>
+                <div class="p-archive-entry-content">
+                  <section>
+                      <p>mainタグはbodyタグ内の中心的なコンテンツであることを示すタグです。これまでにmainクラスをdivタグに付けていた部分がmainタグを使う部分だと考えれば大丈夫です。上に挙げた図ではasideタグも含めていますが、asideタグ内のコンテンツが他のページでも全く同じであればmainタグで囲む内容からは除外しておいた方がいいでしょう。</p>
+                  </section>
                 </div>
-              </header>
-              <div class="p-archive-entry-content">
-                <section>
-                    <p>mainタグはbodyタグ内の中心的なコンテンツであることを示すタグです。これまでにmainクラスをdivタグに付けていた部分がmainタグを使う部分だと考えれば大丈夫です。上に挙げた図ではasideタグも含めていますが、asideタグ内のコンテンツが他のページでも全く同じであればmainタグで囲む内容からは除外しておいた方がいいでしょう。</p>
-                </section>
-              </div>
-              <div class="p-archive-entry-footer">
-                <div class="c-pagenation">ページネーション</div>
+                <div class="p-archive-entry-footer">
+                  <div class="c-pagenation">ページネーション</div>
+                </div>
               </div>
             </div>
-          </div>
-        </article>
-        <aside>
-          <div class="p-sidebar">
-            <header>
-              <h3 class="p-sidebar-title">サイドバータイトル</h3>
-            </header>
-            <section>
-              <div class="p-sidebar-tree">
-                <ul class="p-sidebar-tree-list">
-                  <li><a href="#">test</a></li>
-                  <li><a href="#">test</a></li>
-                  <li><a href="#">test</a></li>
-                  <li><a href="#">test</a></li>
-                </ul>
-              </div>
-            </section>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <div class="l-footer">
-      <div class="p-footer">
-        <div class="c-logo"></div>
-        <div class="p-footer-nav">
-          <ul class="p-footer-nav-list c-nav-footer">
-            <li><a href="index.html">TOP PAGE</a></li>
-            <li><a href="article.html">ARTICLE PAGE</a></li>
-            <li><a href="archive.html">ARCHIVE PAGE</a></li>
-            <li><a href="static.html">STATIC PAGE</a></li>
-          </ul>
-        </div>
-        <div class="p-footer-copyright">
-          <p class="c-copyright">2019</p>
+          </article>
+          <aside>
+            <div class="p-sidebar">
+              <header>
+                <h3 class="p-sidebar-title">サイドバータイトル</h3>
+              </header>
+              <section>
+                <div class="p-sidebar-tree">
+                  <ul class="p-sidebar-tree-list">
+                    <li><a href="#">test</a></li>
+                    <li><a href="#">test</a></li>
+                    <li><a href="#">test</a></li>
+                    <li><a href="#">test</a></li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </aside>
         </div>
       </div>
-    </div>
-  </footer>
+    </main>
+    <footer>
+      <div class="l-footer">
+        <div class="p-footer">
+          <div class="c-logo">
+            <div class="c-logo-img-footer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.64 269.27">
+                <defs>
+                  <style>.cls-1{isolation:isolate;}.cls-2{isolation:isolate;}</style>
+                </defs>
+                <title>chifra</title>
+                <g id="layer_2" data-name="layer_2">
+                  <g id="layer">
+                    <path class="cls-1" d="M71.46,134.63A109.73,109.73,0,0,1,92,70.6a68.27,68.27,0,1,0,0,128.07A109.76,109.76,0,0,1,71.46,134.63Z"/>
+                    <path class="cls-2" d="M292,0a134.06,134.06,0,0,0-82.17,28,110.3,110.3,0,0,1,0,213.31A134.63,134.63,0,1,0,292,0Z"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <nav>
+            <div class="p-footer-nav">
+              <ul class="p-footer-nav-list c-footer-nav">
+                <li><a href="index.html">TOP PAGE</a></li>
+                <li><a href="article.html">ARTICLE PAGE</a></li>
+                <li><a href="archive.html">ARCHIVE PAGE</a></li>
+                <li><a href="static.html">STATIC PAGE</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div class="p-footer-copyright">
+            <p class="c-copyright"><span>&copy;</span> 2019</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div><!-- end wrapper -->
   <script src="dist/main.js"></script>
 </body>
 </html>

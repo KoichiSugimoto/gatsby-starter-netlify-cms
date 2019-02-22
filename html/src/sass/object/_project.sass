@@ -1,0 +1,78 @@
+.p-article, .p-single
+  position: relative
+  background: $color_white
+  padding: 62px
+  display: flex
+  flex-shrink: 0
+  align-items: stretch
+  flex-basis: auto
+  margin-bottom: 2rem
+  @include bp(tab)
+    padding: 31px
+    flex-direction: column
+  &-thumb
+    width: 100% //これがないとflexで縮む
+    max-width: 458px
+    background: $color_bg url(src/img/noimage.svg) no-repeat 50% 50%
+    background-size: 50% 50%
+    display: flex
+    @include bp(tab)
+      max-width: 100%
+    img
+      width: 100%
+      object-fit: contain
+      background: $color_bg
+  &-entry
+    width: 100% //これがないとflexで縮む
+    padding-left: 30px
+    max-width: 730px
+    postion: relative
+    @include bp(tab)
+      padding-top: 1rem
+      padding-left: 0
+      position: relative
+    &-title
+      padding-bottom: .5rem
+      @include fs(20, 22)
+      letter-spacing: 2px
+      font-weight: bold
+      @include bp(tab)
+        padding-top: 36px
+      a
+        @include fs(20, 22)
+        letter-spacing: 2px
+        font-weight: bold
+        transition: color .2s ease
+        &:hover
+          text-decoration: none
+          color: $color_gray2
+    &-meta
+      display: flex
+      flec-wrap: wrap
+      align-items: center
+      padding-bottom: 1rem
+      &-date
+        padding-top: 1px
+        color: $color_gray
+        letter-spacing: 1px
+        @include fs(13, 26)
+        margin-right: 7px
+    &-content
+      @include fs(16, 28)
+      letter-spacing: .1rem
+.p-single
+  max-width: 824px
+  width: 80%
+  flex-direction: column
+  @include bp(0, 880px)
+    width: 100%
+  &-thumb
+    margin-bottom: 36px
+    max-width: 100%
+  &-entry
+    padding-left: 0
+.p-footer-nav
+  width: 100%
+  max-width: 600px
+  margin: 0 auto
+  padding: 1rem 0

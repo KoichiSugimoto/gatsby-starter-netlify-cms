@@ -13,5 +13,35 @@
 @import 'object/_utility.sass'
 
 /** please write common styles here **/
+html
+  background-color: $color_key
+body
+  background-color: $color_white
+  padding-top: 7px
+.l-wrapper
+  background-color: $color_bg
+.l-header
+  position: relative
+  min-height: 120px
+  padding: 45px 0
+  @include bp(sp)
+    padding: 20px 0
+  @include bp(tab)
+    min-height: 90px
+  .c-like
+    top: 50%
+    left: 5%
+    transform: translate(0,-50%)
+.l-container
+  max-width: 1200px
+  width: 95%
+  margin: 0 auto
+  @include bp(sp)
+    width: 100%
+.l-footer
+  padding: 45px 0 35px
+  background-color: $color_key
+  color: $color_white
+  a
+    color: $color_white
 /** end common styles **/
-

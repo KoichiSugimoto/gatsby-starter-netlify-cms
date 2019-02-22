@@ -1,0 +1,222 @@
+.c-logo
+  margin: 0 auto
+  text-align: center
+  &-img
+    width: 172px
+    margin: 12px auto 0
+    @include bp(sp)
+      width: 120px
+    svg
+      fill: rgba(0,0,0,0)
+      stroke: rgba(0,0,0,0.3)
+      stroke-width: 1px
+      stroke-dasharray: 150 400
+      animation: logo-animation 2s ease-in-out 0s forwards
+    &-footer
+      width: 115px
+      margin: 12px auto 0
+      @include bp(sp)
+        width: 100px
+      svg
+        fill: rgba(255,255,255,0)
+        stroke: rgba(255,255,255,0.3)
+        stroke-width: 1px
+        stroke-dasharray: 0 900
+        animation: logo-footer-animation 3s ease-in-out 0s forwards
+        .cls-1
+          animation: logo-footer-animation 3s ease-in-out 0s forwards
+@keyframes logo-animation
+  0%
+    stroke-dashoffset: 300
+  80%
+    stroke: rgba(0,0,0,0.8)
+    fill: rgba(0,0,0,0)
+  90%
+    stroke-dashoffset: 0
+  100%
+    stroke: rgba(0,0,0,0)
+    fill: rgba(0,0,0,0.8)
+@keyframes logo-footer-animation
+  0%
+    stroke-dasharray: 0 900
+  80%
+    stroke: rgba(255,255,255,0.8)
+    fill: rgba(255,255,255,0)
+  90%
+    stroke-dasharray: 920 0
+  100%
+    stroke: rgba(255,255,255,0)
+    fill: rgba(255,255,255,1)
+.c-menu
+  display: flex
+  position: absolute
+  top: 50%
+  right: 5%
+  cursor: pointer
+  width: 57px
+  height: 57px
+  align-items: center
+  transform: translate(0, -50%)
+  @include bp(sp)
+    width: 36px
+    height: 36px
+  span
+    display: block
+    content: ""
+    border-radius: 100%
+    width: 9px
+    height: 9px
+    background: $color_key
+    margin: 5px
+    transition: background 0.3s ease
+    @include bp(sp)
+      width: 6px
+      height: 6px
+      margin: 3px
+  &:hover
+    span
+      background: transparent
+      border: solid 1px $color_key
+  &.is-opened
+    flex-direction: column
+    span
+      background: transparent
+      border: solid 1px $color_key
+      animation: menu-animation 1s ease-in-out 0s forwards
+@keyframes menu-animation
+  0%
+    border-color: transparent
+  100%
+    border-color: $color_key
+.c-tags
+  display: flex
+  flex-wrap: wrap
+  li
+    margin: 0 4px
+  a
+    color: $color_white
+    background-color: $color_brand
+    letter-spacing: 1px
+    padding: 5px 7px
+    border-radius: 3px
+    @include fs(12)
+    transition: background .2s ease
+    &:hover
+      text-decoration: none
+      background-color: $color_gray
+.c-like
+  position: absolute
+  top: 26px
+  right: 26px
+  width: 36px
+  height: 36px
+  display: flex
+  flex-direction: column
+  align-items: center
+  cursor: pointer
+  @include bp(tab)
+    flex-direction: row
+    left: 5px
+    top: 10px
+  span
+    color: $color_gray
+    @include fs(36, 36)
+    transition: color .2s ease
+  &-number
+    font-weight: bold
+    @include fs(12)
+    color: $color_gray
+    transition: color .2s ease
+    @include bp(tab)
+      padding-left: .5rem
+  &:hover
+    span
+      color: $color_gray2
+    .c-like-number
+      color: $color_gray2
+  &.is-active
+    span
+      color: $color_brand
+      position: relative
+      animation: like-animation .75s ease-in-out 0s forwards
+      &::before
+        position: absolute
+        top: 50%
+        left: 50%
+        content: ""
+        display: block
+        width: 0
+        height: 0
+        border: solid 1px $color_brand
+        transform: translate(-50% ,-50%)
+        border-radius: 100%
+        animation: like-click-animation .5s ease-in-out 0s none
+    .c-like-number
+      color: $color_brand
+@keyframes like-animation
+  0%
+    color: transparent
+  50%
+    color: transparent
+  100%
+    color: $color_brand
+@keyframes like-click-animation
+  0%
+    width: 0
+    height: 0
+  100%
+    width: 36px
+    height: 36px
+.c-button
+  position: absolute
+  bottom: 30px
+  right: 30px
+  z-index: 2
+  @include bp(tab)
+    position: relative
+    right: auto
+    bottom: auto
+    text-align: center
+    padding-top: 2rem
+    padding-bottom: 1rem
+  a
+    font-weight: bold
+    padding: 9px 6px
+    transition: background 2s ease
+    &:hover
+      text-decoration: none
+      position: relative
+      &::after
+        position: absolute
+        bottom: 5px
+        left: 0
+        content: ""
+        background-image: linear-gradient(-45deg, transparent 25%, $color_brand 25%, $color_brand 50%, transparent 50%, transparent 75%, $color_brand 75%, $color_brand)
+        background-size: 5px 5px
+        background-attachment: fixed
+        width: 100%
+        height: .6rem
+        z-index: -1
+.c-footer-nav
+  text-align: center
+  margin: 1rem auto
+  display: flex
+  justify-content: space-around
+  @include bp(tab)
+    flex-direction: column
+  li
+    @include bp(tab)
+      margin: .5rem 0
+  a
+    text-decoration: none
+    @include fs(14)
+.c-copyright
+  @include fs(12,12)
+  text-align: center
+  padding-bottom: 2rem
+  display: flex
+  align-items: center
+  justify-content: center
+  span
+    @include fs(18,12)
+    margin-right: .2rem
