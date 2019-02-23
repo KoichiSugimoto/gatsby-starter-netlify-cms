@@ -1,4 +1,4 @@
-.p-article, .p-single
+.p-article, .p-single, .p-archive, .p-static
   position: relative
   background: $color_white
   padding: 62px
@@ -61,16 +61,38 @@
       @include fs(16, 28)
       letter-spacing: .1rem
 .p-single
-  max-width: 824px
+  max-width: $width_middle
   width: 80%
-  flex-direction: column
-  @include bp(0, 880px)
+  @include bp(0, $width_middle)
     width: 100%
+.p-single, .p-static
+  flex-direction: column
   &-thumb
     margin-bottom: 36px
     max-width: 100%
   &-entry
     padding-left: 0
+.p-sidebar
+  padding-left: 32px
+  color: $color_gray2
+  @include bp(0, $width_middle)
+    border: solid 4px #ccc
+    padding: 31px 62px
+    margin-bottom: 32px
+  @include bp(tab)
+    padding: 31px
+  @include bp(sp)
+    width: 95%
+    margin: 0 auto 32px auto
+  a
+    color: $color_gray2
+    transition: color .2s ease
+    &:hover
+      color: $color_default
+  &-title
+    @include fs(16, 32)
+.p-static-entry
+  margin: 0 auto
 .p-footer-nav
   width: 100%
   max-width: 600px
