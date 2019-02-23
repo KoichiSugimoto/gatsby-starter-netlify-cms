@@ -65,7 +65,7 @@
   width: 80%
   @include bp(0, $width_middle)
     width: 100%
-.p-single, .p-static
+.p-single
   flex-direction: column
   &-thumb
     margin-bottom: 36px
@@ -91,8 +91,14 @@
       color: $color_default
   &-title
     @include fs(16, 32)
-.p-static-entry
-  margin: 0 auto
+.p-static
+  flex-direction: column
+  &-entry
+    padding-left: 0
+    margin: 0 auto
+  &-thumb
+    margin: 0 auto 36px
+    max-width: $width_content
 .p-footer-nav
   width: 100%
   max-width: 600px

@@ -195,6 +195,53 @@
         width: 100%
         height: .6rem
         z-index: -1
+.c-pagenation
+  margin-bottom: 96px
+  &-list
+    display: flex
+    justify-content: center
+    align-items: center;
+    &-number
+      margin: 10px
+      a,&.is-current span
+        width: 36px
+        height: 36px
+        padding: 10px 12px
+        background: $color_white
+        font-weight: bold
+        text-decoration: none
+        &:hover
+          background: $color_gray2
+      &.is-current span
+        background: $color_gray
+      &.is-prev a,&.is-next a
+        padding: 0
+        display: block
+        background: transparent
+        text-indent: 100%
+        white-space: nowrap
+        overflow: hidden
+        position: relative
+        &::before
+          position: absolute
+          width: 20px
+          height: 20px
+          border-top: solid 3px $color_gray
+          border-left: solid 3px $color_gray
+          content: ""
+        &:hover::before
+          border-top: solid 3px $color_gray2
+          border-left: solid 3px $color_gray2
+      &.is-prev a
+        &::before
+          top: 25%
+          left: 40%
+          transform: rotate(-45deg)
+      &.is-next a
+        &::before
+          top: 25%
+          left: 10%
+          transform: rotate(135deg) translate(0%, 0%)
 .c-footer-nav
   text-align: center
   margin: 1rem auto
