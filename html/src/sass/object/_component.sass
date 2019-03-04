@@ -12,6 +12,8 @@
       stroke-width: 1px
       stroke-dasharray: 150 400
       animation: logo-animation 2s ease-in-out 0s forwards
+      .is-loaded
+        animation: none
     &-footer
       width: 115px
       margin: 12px auto 0
@@ -55,7 +57,7 @@
   height: 57px
   align-items: center
   transform: translate(0, -50%)
-  @include bp(sp)
+  @include bp(tab)
     width: 36px
     height: 36px
   span
@@ -67,7 +69,7 @@
     background: $color_key
     margin: 5px
     transition: background 0.3s ease
-    @include bp(sp)
+    @include bp(tab)
       width: 6px
       height: 6px
       margin: 3px
@@ -196,11 +198,11 @@
         height: .6rem
         z-index: -1
 .c-pagenation
-  margin-bottom: 96px
+  margin-bottom: 106px
   &-list
     display: flex
     justify-content: center
-    align-items: center;
+    align-items: center
     &-number
       margin: 10px
       a,&.is-current span
@@ -242,6 +244,39 @@
           top: 25%
           left: 10%
           transform: rotate(135deg) translate(0%, 0%)
+.c-breadcrumb
+  @include bp(sp)
+    padding: 0 31px
+  &-list
+    display: flex
+    align-items: center
+    a, span
+      @include fs(14,20)
+      text-decoration: none
+      padding: 8px 18px 8px 14px
+      @include bp(sp)
+        @include fs(12, 18)
+      &:hover
+        color: $color_gray2
+    a
+      color: $color_gray
+      position: relative
+      &::before
+        position: absolute
+        content: ""
+        width: 8px
+        height: 8px
+        display: block
+        border-top: solid 2px $color_gray
+        border-right: solid 2px $color_gray
+        top: 10px
+        right: 0
+        transform: rotate(45deg)
+    span
+      color: $color_gray2
+    li:nth-child(1)
+      a, span
+        padding-left: 0
 .c-footer-nav
   text-align: center
   margin: 1rem auto
@@ -265,3 +300,38 @@
   span
     @include fs(18,12)
     margin-right: .2rem
+.c-gotop
+  display: flex
+  justify-content: flex-end
+  &.is-fixed
+    position: fixed
+    bottom: 0
+    right: 0
+  a, span
+    position: relative
+    text-indent: 100%
+    display: block
+    white-space: nowrap
+    overflow: hidden
+    width: 44px
+    height: 44px
+    padding: 0px
+    background-color: $color_key
+    &:before
+      position: absolute
+      top: calc(50% + 6px)
+      left: 50%
+      display: block
+      content: ""
+      width: 18px
+      height: 18px
+      border-top: solid 2px $color_white
+      border-left: solid 2px $color_white
+      transform: translate(-50%, -50%) rotate(45deg)
+.c-progressbar
+  background: $color_white
+  height: 7px
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0

@@ -1,3 +1,27 @@
+.p-header-nav
+  position: absolute
+  top: 70%
+  right: 5%
+  z-index: 100
+  box-shadow: 0 0 8px 0 rgba(0,0,0,.15)
+  @include bp(sp)
+    width: 90%
+  &-list
+    a, span
+      @include fs(14, 28)
+      display: block
+      padding: 7px 16px
+      text-decoration: none
+      background: $color_white
+      transition: background .2s ease
+      @include bp(sp)
+        @include fs(12, 24)
+        padding: 16px 20px
+      &.is-current
+        background: $color_brand
+        color: $color_white
+      &:hover
+        background: $color_gray2
 .p-article, .p-single, .p-archive, .p-static
   position: relative
   background: $color_white
@@ -25,7 +49,6 @@
   &-entry
     width: 100% //これがないとflexで縮む
     padding-left: 30px
-    max-width: 730px
     postion: relative
     @include bp(tab)
       padding-top: 1rem
@@ -33,7 +56,7 @@
       position: relative
     &-title
       padding-bottom: .5rem
-      @include fs(20, 22)
+      @include fs(20, 30)
       letter-spacing: 2px
       font-weight: bold
       @include bp(tab)
@@ -83,7 +106,7 @@
     padding: 31px
   @include bp(sp)
     width: 95%
-    margin: 0 auto 32px auto
+    margin: 0 auto 15px auto
   a
     color: $color_gray2
     transition: color .2s ease
@@ -91,6 +114,10 @@
       color: $color_default
   &-title
     @include fs(16, 32)
+  &.is-fixed
+    @include bp($width_middle, 0)
+      position: fixed
+      bottom: 0
 .p-static
   flex-direction: column
   &-entry
@@ -99,6 +126,12 @@
   &-thumb
     margin: 0 auto 36px
     max-width: $width_content
+.p-archive-title
+  font-weight: bold
+  @include fs(14,20)
+  padding: 8px 18px 8px 14px
+  @include bp(sp)
+    @include fs(12, 18)
 .p-footer-nav
   width: 100%
   max-width: 600px

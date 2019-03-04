@@ -17,7 +17,6 @@ html
   background-color: $color_key
 body
   background-color: $color_white
-  padding-top: 7px
 .l-wrapper
   background-color: $color_bg
 .l-header
@@ -46,3 +45,21 @@ body
   a
     color: $color_white
 /** end common styles **/
+
+.is-nav-fixed 
+  .l-wrapper
+    @include bp(tab)
+      padding-top: 70px
+  .l-header
+    @include bp(tab)
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      z-index: 50
+      background: $color_bg
+      padding: 10px 0
+      min-height: 70px
+    .c-logo-img
+      @include bp(tab)
+        width: 80px
