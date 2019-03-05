@@ -1,0 +1,139 @@
+.p-header-nav
+  position: absolute
+  top: 70%
+  right: 5%
+  z-index: 100
+  box-shadow: 0 0 8px 0 rgba(0,0,0,.15)
+  @include bp(sp)
+    width: 90%
+  &-list
+    a, span
+      @include fs(14, 28)
+      display: block
+      padding: 7px 16px
+      text-decoration: none
+      background: $color_white
+      transition: background .2s ease
+      @include bp(sp)
+        @include fs(12, 24)
+        padding: 16px 20px
+      &.is-current
+        background: $color_brand
+        color: $color_white
+      &:hover
+        background: $color_gray2
+.p-article, .p-single, .p-archive, .p-static
+  position: relative
+  background: $color_white
+  padding: 62px
+  display: flex
+  flex-shrink: 0
+  align-items: stretch
+  flex-basis: auto
+  margin-bottom: 2rem
+  @include bp(tab)
+    padding: 31px
+    flex-direction: column
+  &-thumb
+    width: 100% //これがないとflexで縮む
+    max-width: 458px
+    background: $color_bg url(../../src/img/noimage.svg) no-repeat 50% 50%
+    background-size: 50% 50%
+    display: flex
+    @include bp(tab)
+      max-width: 100%
+    img
+      width: 100%
+      object-fit: contain
+      background: $color_bg
+  &-entry
+    width: 100% //これがないとflexで縮む
+    padding-left: 30px
+    postion: relative
+    @include bp(tab)
+      padding-top: 1rem
+      padding-left: 0
+      position: relative
+    &-title
+      padding-bottom: .5rem
+      @include fs(20, 30)
+      letter-spacing: 2px
+      font-weight: bold
+      @include bp(tab)
+        padding-top: 36px
+      a
+        @include fs(20, 22)
+        letter-spacing: 2px
+        font-weight: bold
+        transition: color .2s ease
+        &:hover
+          text-decoration: none
+          color: $color_gray2
+    &-meta
+      display: flex
+      flec-wrap: wrap
+      align-items: center
+      padding-bottom: 1rem
+      &-date
+        padding-top: 1px
+        color: $color_gray
+        letter-spacing: 1px
+        @include fs(13, 26)
+        margin-right: 7px
+    &-content
+      @include fs(16, 28)
+      letter-spacing: .1rem
+.p-single
+  max-width: $width_middle
+  width: 80%
+  @include bp(0, $width_middle)
+    width: 100%
+.p-single
+  flex-direction: column
+  &-thumb
+    margin-bottom: 36px
+    max-width: 100%
+  &-entry
+    padding-left: 0
+.p-sidebar
+  padding-left: 32px
+  color: $color_gray2
+  @include bp(0, $width_middle)
+    border: solid 4px #ccc
+    padding: 31px 62px
+    margin-bottom: 32px
+  @include bp(tab)
+    padding: 31px
+  @include bp(sp)
+    width: 95%
+    margin: 0 auto 15px auto
+  a
+    color: $color_gray2
+    transition: color .2s ease
+    &:hover
+      color: $color_default
+  &-title
+    @include fs(16, 32)
+  &.is-fixed
+    @include bp($width_middle, 0)
+      position: fixed
+      bottom: 0
+.p-static
+  flex-direction: column
+  &-entry
+    padding-left: 0
+    margin: 0 auto
+  &-thumb
+    margin: 0 auto 36px
+    max-width: $width_content
+.p-archive-title
+  font-weight: bold
+  @include fs(14,20)
+  padding: 8px 18px 8px 14px
+  @include bp(sp)
+    @include fs(12, 18)
+.p-footer-nav
+  width: 100%
+  max-width: 600px
+  margin: 0 auto
+  padding: 1rem 0

@@ -5,6 +5,7 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
+import Sample from "../img/sample.png";
 
 export const IndexPageTemplate = ({
   image,
@@ -16,103 +17,112 @@ export const IndexPageTemplate = ({
   intro,
   main
 }) => (
-  <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          height: "150px",
-          lineHeight: "1",
-          justifyContent: "space-around",
-          alignItems: "left",
-          flexDirection: "column"
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-            backgroundColor: "rgb(255, 68, 0)",
-            color: "white",
-            lineHeight: "1",
-            padding: "0.25em"
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-            backgroundColor: "rgb(255, 68, 0)",
-            color: "white",
-            lineHeight: "1",
-            padding: "0.25em"
-          }}
-        >
-          {subheading}
-        </h3>
-      </div>
-    </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
+  <main>
+    <div className="l-container">
+      <div className="l-articles">
+        <Features gridItems={intro.blurbs} />
+        <BlogRoll />
+        <article>
+          <div className="p-article">
+            <Link className="p-article-thumb" to="/blog">
+              <img
+                src={Sample}
+                alt="エントリータイトル"
+                title="エントリータイトル"
+              />
+            </Link>
+            <div className="p-article-entry">
+              <header>
+                <h2 className="p-article-entry-title">
+                  <Link to="/blog">
+                    エントリータイトルエントリータイトルエントリータイトルエントリータイトルエントリータイトルエントリータイトルエントリータイトル
+                  </Link>
+                </h2>
+                <div className="p-article-entry-meta">
+                  <div className="p-article-entry-meta-date">YYYY/MM/DD</div>
+                  <div className="p-article-entry-meta-tags">
+                    <ul className="p-single-entry-meta-tags-list c-tags">
+                      <li>
+                        <Link to="/blog">タグ1</Link>
+                      </li>
+                      <li>
+                        <Link to="/blog">タグ2</Link>
+                      </li>
+                      <li>
+                        <Link to="/blog">タグ3</Link>
+                      </li>
+                      <li>
+                        <Link to="/blog">タグ4</Link>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div>
+              </header>
+              <div className="p-article-entry-content">
+                <section>
+                  <p>
+                    mainタグはbodyタグ内の中心的なコンテンツであることを示すタグです。これまでにmainクラスをdivタグに付けていた部分がmainタグを使う部分だと考えれば大丈夫です。上に挙げた図ではasideタグも含めていますが、asideタグ内のコンテンツが他のページでも全く同じであればmainタグで囲む内容からは除外しておいた方がいいでしょう。
+                  </p>
+                </section>
+              </div>
+              <div className="c-like is-active">
+                <span>❤</span>
+                <i className="c-like-number">1</i>
+              </div>
+              <div className="c-button">
+                <Link to="/blog">エントリータイトル...の続きを読む</Link>
               </div>
             </div>
           </div>
-        </div>
+        </article>
+        <article>
+          <div className="p-article">
+            <Link className="p-article-thumb" to="/blog">
+              <img
+                src={Sample}
+                alt="エントリータイトル"
+                title="エントリータイトル"
+              />
+            </Link>
+            <div className="p-article-entry">
+              <header>
+                <h2 className="p-article-entry-title">
+                  <Link to="/blog">エントリータイトルエントリータイトル</Link>
+                </h2>
+                <div className="p-article-entry-meta">
+                  <div className="p-article-entry-meta-date">YYYY/MM/DD</div>
+                  <div className="p-article-entry-meta-tags">
+                    <ul className="p-single-entry-meta-tags-list c-tags">
+                      <li>
+                        <Link to="/blog">タグ1</Link>
+                      </li>
+                      <li>
+                        <Link to="/blog">タグ2</Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </header>
+              <div className="p-article-entry-content">
+                <section>
+                  <p>
+                    mainタグはbodyタグ内の中心的なコンテンツであることを示すタグです。これまでにmainクラスをdivタグに付けていた部分がmainタグを使う部分だと考えれば大丈夫です。上に挙げた図ではasideタグも含めていますが、asideタグ内のコンテンツが他のページでも全く同じであればmainタグで囲む内容からは除外しておいた方がいいでしょう。
+                  </p>
+                </section>
+              </div>
+              <div className="c-like is-disabled">
+                <span>❤</span>
+                <i className="c-like-number">100</i>
+              </div>
+              <div className="c-button">
+                <Link to="/blog">エントリータイトル...の続きを読む</Link>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
-    </section>
-  </div>
+    </div>
+  </main>
 );
 
 IndexPageTemplate.propTypes = {
@@ -131,7 +141,7 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
+    <Layout isFront="true">
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}

@@ -1,12 +1,34 @@
 import React from "react";
 import { Link } from "gatsby";
-import logo from "../img/logo/logo-name.svg";
+import PageTransition from "gatsby-plugin-page-transitions";
+import Transition from "react-transition-group/Transition";
 
-const Navbar = class extends React.Component {
+const pageTransitionEvent = "gatsby-plugin-page-transition::exit";
+const defaultStyle = {
+  // Default transition styling
+  transition: `all 200ms ease-in-out`,
+  opacity: 0
+};
+const transitionStyles = {
+  // Transition styling
+  entering: { opacity: 1 },
+  entered: { opacity: 0 },
+  exiting: { opacity: 0 },
+  exited: { opacity: 1 }
+};
+
+const Navbar = class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.listenHandler = this.listenHandler.bind(this);
+    this.state = {
+      in: false
+    };
+  }
   componentDidMount() {
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(
-      document.querySelectorAll(".navbar-burger"),
+      document.querySelectorAll(".c-menu"),
       0
     );
     // Check if there are any navbar burgers
@@ -14,57 +36,70 @@ const Navbar = class extends React.Component {
       // Add a click event on each of them
       $navbarBurgers.forEach(el => {
         el.addEventListener("click", () => {
-          // Get the target from the "data-target" attribute
-          const target = el.dataset.target;
-          const $target = document.getElementById(target);
-
           // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-          el.classList.toggle("is-active");
-          $target.classList.toggle("is-active");
+          el.classList.toggle("is-opened");
+          // Change state for "p-header-nav"
+          this.toggle();
         });
       });
     }
+    global.window.addEventListener(pageTransitionEvent, this.listenHandler);
+    this.setState({
+      in: true
+    });
+  }
+  listenHandler() {
+    this.setState({
+      in: false
+    });
+  }
+
+  componentWillUnmount() {
+    global.window.removeEventListener(pageTransitionEvent, this.listenHandler);
+  }
+
+  toggle() {
+    this.setState({
+      in: !this.state.in
+    });
   }
 
   render() {
     return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="cifra" style={{ width: "88px" }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div className="navbar-burger burger" data-target="navMenu">
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <div id="navMenu" className="navbar-menu">
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-          </div>
+      <nav>
+        <div className="c-menu">
+          <span />
+          <span />
+          <span />
         </div>
+        <PageTransition transitionTime={200}>
+          <Transition in={this.state.in} timeout={200}>
+            {state => (
+              <div
+                className="p-header-nav"
+                style={{
+                  ...defaultStyle,
+                  ...transitionStyles[state]
+                }}
+              >
+                <ul className="p-header-nav-list">
+                  <li>
+                    <span className="is-current">TOP PAGE</span>
+                  </li>
+                  <li>
+                    <Link to="/blog">ARCHIVE PAGE</Link>
+                  </li>
+                  <li>
+                    <Link to="/blog">ARTICLE PAGE PAGE</Link>
+                  </li>
+                  <li>
+                    <Link to="/about">STATIC PAGE</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </Transition>
+        </PageTransition>
       </nav>
     );
   }

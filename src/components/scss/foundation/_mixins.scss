@@ -1,6 +1,5 @@
-// @import "compass";
 @charset "utf-8";
-@import '../base/_valiables.scss';
+@import '_valiables.scss';
 
 // braakpoint settings ------------------------------
 @mixin bp($bp_1: 0, $bp_2: 0) {
