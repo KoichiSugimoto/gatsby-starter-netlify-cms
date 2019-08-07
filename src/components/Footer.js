@@ -4,8 +4,8 @@ import { Link } from "gatsby";
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer>
-        <div className="c-gotop is-fixed">
+      <footer id="footer">
+        <div className={`c-gotop ${this.props.footerFix ? "is-fixed" : ""}`}>
           <Link to="#">トップへ戻る</Link>
         </div>
         <div className="l-footer">

@@ -1,39 +1,37 @@
-import React from 'react'
+import React from "react";
+import { Link } from "gatsby";
 
-import Layout from '../../components/Layout'
-import BlogRoll from '../../components/BlogRoll'
+import Layout from "../../components/Layout";
+import BlogRoll from "../../components/BlogRoll";
+import Sidebar from "../../components/Sidebar";
 
 export default class BlogIndexPage extends React.Component {
   render() {
-    
-  return (
+    return (
       <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-            <div
-                className="full-width-image-container margin-top-0"
-                style={{
-                  backgroundImage: `url('/img/blog-index.jpg')`,
-                }}
-              >
-                <h1
-                  className="has-text-weight-bold is-size-1"
-                  style={{
-                    boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-                    backgroundColor: '#f40',
-                    color: 'white',
-                    padding: '1rem',
-                  }}
-                >
-                  Latest Stories
-                </h1>
-              </div>
+        <div className="l-container">
+          <nav>
+            <div className="c-breadcrumb">
+              <ul className="c-breadcrumb-list">
+                <li>
+                  <Link to="index.html">トップページ</Link>
+                </li>
+                <li>
+                  <h1 className="p-archive-title">最新の記事</h1>
+                </li>
+              </ul>
             </div>
-              <BlogRoll />
+          </nav>
+          <div className="l-archive">
+            <div className="l-archive-inner">
+              <BlogRoll pageName="archive" />
             </div>
-        </section>
+            <aside>
+              <Sidebar />
+            </aside>
+          </div>
+        </div>
       </Layout>
-    )
+    );
   }
 }

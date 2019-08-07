@@ -7,17 +7,18 @@ const pageTransitionEvent = "gatsby-plugin-page-transition::exit";
 const defaultStyle = {
   // Default transition styling
   transition: `all 200ms ease-in-out`,
+  display: `none`,
   opacity: 0
 };
 const transitionStyles = {
   // Transition styling
-  entering: { opacity: 1 },
-  entered: { opacity: 0 },
-  exiting: { opacity: 0 },
-  exited: { opacity: 1 }
+  entering: { opacity: 1, display: `block` },
+  entered: { opacity: 0, display: `none` },
+  exiting: { opacity: 0, display: `none` },
+  exited: { opacity: 1, display: `block` }
 };
 
-const Navbar = class Navbar extends React.Component {
+class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.listenHandler = this.listenHandler.bind(this);
@@ -53,15 +54,13 @@ const Navbar = class Navbar extends React.Component {
       in: false
     });
   }
-
-  componentWillUnmount() {
-    global.window.removeEventListener(pageTransitionEvent, this.listenHandler);
-  }
-
   toggle() {
     this.setState({
       in: !this.state.in
     });
+  }
+  componentWillUnmount() {
+    global.window.addEventListener(pageTransitionEvent, this.listenHandler);
   }
 
   render() {
@@ -84,16 +83,24 @@ const Navbar = class Navbar extends React.Component {
               >
                 <ul className="p-header-nav-list">
                   <li>
-                    <span className="is-current">TOP PAGE</span>
+                    <Link to="/" activeClassName="is-current">
+                      TOP PAGE
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/blog">ARCHIVE PAGE</Link>
+                    <Link to="/blog" activeClassName="is-current">
+                      ARCHIVE PAGE
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/blog">ARTICLE PAGE PAGE</Link>
+                    <Link to="/blog" activeClassName="is-current">
+                      ARTICLE PAGE PAGE
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/about">STATIC PAGE</Link>
+                    <Link to="/about" activeClassName="is-current">
+                      STATIC PAGE
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -103,6 +110,6 @@ const Navbar = class Navbar extends React.Component {
       </nav>
     );
   }
-};
+}
 
 export default Navbar;

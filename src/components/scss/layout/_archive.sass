@@ -4,5 +4,8 @@
     flex-direction: column
 .l-archive-inner
   margin: 0 0 96px 0
-  @include bp(tab)
-    margin-bottom: 48px
+  max-width: $width_middle
+  width: 80%
+  @include bp(0, $width_middle)
+    width: 100%
+    margin-bottom: 0

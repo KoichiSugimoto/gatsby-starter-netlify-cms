@@ -37,7 +37,7 @@
   &-thumb
     width: 100% //これがないとflexで縮む
     max-width: 458px
-    background: $color_bg url(../../src/img/noimage.svg) no-repeat 50% 50%
+    background: $color_bg url(../../img/noimage.svg) no-repeat 50% 50%
     background-size: 50% 50%
     display: flex
     @include bp(tab)
@@ -96,6 +96,8 @@
   &-entry
     padding-left: 0
 .p-sidebar
+  position: sticky
+  top: 0
   padding-left: 32px
   color: $color_gray2
   @include bp(0, $width_middle)

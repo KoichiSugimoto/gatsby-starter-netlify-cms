@@ -8,31 +8,32 @@ class BlogRoll extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
+    const page = this.props.pageName;
 
     return (
       posts &&
       posts.map(({ node: post }) => (
-        <article>
-          <div className="p-article">
-            <Link className="p-article-thumb" to={post.fields.slug}>
+        <article key={post.id}>
+          <div className={`p-${page}`}>
+            <Link className={`p-${page}-thumb`} to={post.fields.slug}>
               <img
                 src={Sample}
                 alt={post.frontmatter.title}
                 title={post.frontmatter.title}
               />
             </Link>
-            <div className="p-article-entry">
+            <div className={`p-${page}-entry`}>
               <header>
-                <h2 className="p-article-entry-title">
+                <h2 className={`p-${page}-entry-title`}>
                   <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                 </h2>
               </header>
-              <div className="p-article-entry-meta">
-                <div className="p-article-entry-meta-date">
+              <div className={`p-${page}-entry-meta`}>
+                <div className={`p-${page}-entry-meta-date`}>
                   {post.frontmatter.date}
                 </div>
-                <div className="p-article-entry-meta-tags">
-                  <ul className="p-single-entry-meta-tags-list c-tags">
+                <div className={`p-${page}-entry-meta-tags`}>
+                  <ul className={`p-${page}-entry-meta-tags-list c-tags`}>
                     <li>
                       <Link to="/blog">タグ1</Link>
                     </li>
@@ -48,7 +49,7 @@ class BlogRoll extends React.Component {
                   </ul>
                 </div>
               </div>
-              <div className="p-article-entry-content">
+              <div className={`p-${page}-entry-content`}>
                 <section>
                   <p>{post.excerpt}</p>
                 </section>
@@ -70,37 +71,44 @@ class BlogRoll extends React.Component {
   }
 }
 
+BlogRoll.defaultProps = {
+  pageName: `article`
+};
+
 BlogRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array
     })
-  })
+  }),
+  pageName: PropTypes.string
 };
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query BlogRollQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-        ) {
-          edges {
-            node {
-              excerpt(pruneLength: 400)
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                templateKey
-                date(formatString: "MMMM DD, YYYY")
-                thumbnail {
-                  childImageSharp {
-                    fluid(maxWidth: 2048, quality: 100) {
-                      ...GatsbyImageSharpFluid
+export default props => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query BlogRollQuery {
+          allMarkdownRemark(
+            sort: { order: DESC, fields: [frontmatter___date] }
+            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+          ) {
+            edges {
+              node {
+                excerpt(pruneLength: 400)
+                id
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                  templateKey
+                  date(formatString: "MMMM DD, YYYY")
+                  thumbnail {
+                    childImageSharp {
+                      fluid(maxWidth: 2048, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                      }
                     }
                   }
                 }
@@ -108,8 +116,10 @@ export default () => (
             }
           }
         }
-      }
-    `}
-    render={(data, count) => <BlogRoll data={data} count={count} />}
-  />
-);
+      `}
+      render={(data, count) => (
+        <BlogRoll data={data} count={count} {...props} />
+      )}
+    />
+  );
+};
