@@ -6,7 +6,7 @@
   "devDependencies": {
     "autoprefixer": "^9.4.8",
     "css-loader": "^2.1.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "prettier-stylelint": "^0.4.2",
     "sass-loader": "^7.1.0",
